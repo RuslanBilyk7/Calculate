@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="multiply" class="com.nospring2.OpMultiply"/>
+
+    <bean id="add" class="com.nospring2.OpAdd"/>
+
+    <bean id="opsbean" class="com.spring.CalculateSpring">
+
+        <!--Устанавливаем ссылку свойства ops opsbean бина, к бину с именем multiply-->
+        <property name="ops" ref="multiply"/>
+    </bean>
+
+    <bean id="opsbean2" class="com.spring.CalculateSpring">
+
+        <!--Устанавливаем ссылку свойства ops opsbean2 бина, к бину с именем add-->
+        <property name="ops" ref="add"/>
+    </bean>
+
+</beans>
+    <!--<property name="writer" ref="screen"/>-->
+
+    <!--Spring контейнер. Он читает конфигурационный файл beans.xml (описание контекста) и использует полученную информацию для связывания компонентов вместе. Описание контекста – это разновидность конфигурационного файла для создания приложения за пределами компонентов.
+
+    CalculateSpring – это основной класс, который на прямую не иницилизирует Operation или ResultWriter. Вместо этого эта задача выполняется Spring контейнером. Spring контейнер считывает конфигурационный файл beans.xml, иницилизирует бины и затем связывает их соответственно конфигурационной информации, содержащейся в beans.xml.
+    Создаем контекст, затем фабрику и при помощи фабрики достаем бин. ApplicationContext в Spring это тип BeanFactory. BeanFactory дает возможность доступа к JavaBeans которые иницилизированы, связанные и управляемые Spring контейнером.
+
+Хотя есть и другие BeanFactory классы в Spring, ApplicationContext класс намного чаще используется, так как он снабжает нас несколькими ценными особенностями – включение поддержки для интернационализации, загрузка ресурсов, интеграция с внешними иерархиями конекстов и много чего еще.
+
+Обеспечиваем Spring контейнер инструкциями по связыванию
+Конструктор ClassPathXmlApplicationContext берет в качестве аргумента файл описания контекста или bean wiring файл. Этот файл называется beans.xml только лишь в наших примерах, вы же можете называть его как хотите, но следите, чтобы расширение файла было XML. Файл beans.xml – это конфигурационный файл, описывающий, как связывать объекты вместе.
+В xml файле каждый бин имеет id с уникальным именем.
+
+/>-->
+
+

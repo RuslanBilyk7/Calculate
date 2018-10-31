@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <!--<bean id=”screen” class=”com.wrox.begspring.ScreenWriter” />-->
+    <bean id="multiply" class="com.nospring2.OpMultiply"/>
+    <bean id="opsbean" class="com.nospring2.CalculateSpringAOP" autowire="byType"/>
+
+    <aop:aspectj-autoproxy/>
+    <bean id="logaspect" class="com.nospring2.LoggingAspect"/>
+
+</beans>
